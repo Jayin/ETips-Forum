@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-# coding=utf-8
-__author__ = 'Jayin Ton'
+# -*- coding: utf-8 -*-
 
 
 class Config(object):
@@ -9,6 +7,11 @@ class Config(object):
     PORT = 8000
     HOST = u'127.0.0.1'
     SECRET_KEY = u'adfO823nlDjkfo283r'
+
+
+class DevelopmentConfig(Config):
+    DEBUG = True
+    TESTING = True
     # mysql://username:password@server:port/db
     username = u'root'
     password = u''
@@ -16,10 +19,5 @@ class Config(object):
     port = u'3306'
     db = u'forum'
     SQLALCHEMY_DATABASE_URI = u'mysql://{username}:{password}@{server}:{port}/{db}'.format(
-        username = username, password=password, server=server, port=port, db=db)
-
-
-class DevelopmentConfig(Config):
-    DEBUG = True
-    TESTING = True
+        username=username, password=password, server=server, port=port, db=db)
 
