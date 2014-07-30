@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from Lotus import app
+from Lotus.application import app
 from Lotus.config import default_config
 
 
