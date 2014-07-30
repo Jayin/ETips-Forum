@@ -1,7 +1,7 @@
-ETips-Forum
+Lotus
 ===========
-
-A forum for WYU ,subproject of ETips.
+>The Lotus of WYU.
+A forum for WYU 
 
 
 
