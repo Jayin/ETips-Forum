@@ -1,8 +1,18 @@
 Lotus
 ===========
->The Lotus of WYU.
+>The Lotus of WYU.  
+
 A forum for WYU 
 
+setup
+===
+```
+#for the first time
+python setup_db.py
+
+#run the app
+python run.py
+```
 
 
 License
