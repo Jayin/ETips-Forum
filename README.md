@@ -6,13 +6,16 @@ A forum for WYU
 
 setup
 ===
-```
+```shell
 #for the first time
 python setup_db.py
 
 #run the app
 python run.py
 ```
+
+**Notice**
+motify the config in `Lotus/config/default_config`
 
 
 License
