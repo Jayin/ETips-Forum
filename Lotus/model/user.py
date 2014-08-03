@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from Lotus.app import db
 
+
 class User(db.Model):
     userid = db.Column(db.Integer, primary_key=True)
     nickname = db.Column(db.String(16), unique=True)
