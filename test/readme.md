@@ -1,3 +1,6 @@
+默认对DevelopmentConfig进行测试
+
+
 Method	Checks that	New in
 assertEqual(a, b)	a == b	 
 assertNotEqual(a, b)	a != b	 

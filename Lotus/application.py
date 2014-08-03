@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 version = '1.0.0'
-author  = 'Jayin Ton'
-#import every thing here
+author = 'Jayin Ton'
+
+'''
+应用程序主入口
+'''
+# import every thing here
 
 from .app import app, db
 
