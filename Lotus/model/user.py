@@ -9,6 +9,11 @@ class User(db.Model):
     description = db.Column(db.String(128), unique=True)
     type = db.Column(db.String(16))
     email = db.Column(db.String(32), unique=True)
+    '''
+    constant
+    '''
+    CONST_TYPE_USER = 'user'
+    CONST_TYPE_ADMIN = 'admin'
 
     def __init__(self):
         self.userid = None
