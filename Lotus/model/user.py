@@ -5,15 +5,17 @@ from Lotus.app import db
 class User(db.Model):
     userid = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(16), unique=True)
-    avatar = db.Column(db.String(64), unique=True)
-    description = db.Column(db.String(128), unique=True)
+    avatar = db.Column(db.String(64))
+    description = db.Column(db.String(128))
     type = db.Column(db.String(16))
     email = db.Column(db.String(32), unique=True)
+    psw = db.Column(db.String(32))
     '''
     constant
     '''
     CONST_TYPE_USER = 'user'
     CONST_TYPE_ADMIN = 'admin'
+    CONST_DEFAULT_PASSWORD = '12345678'
 
     def __init__(self):
         self.userid = None
