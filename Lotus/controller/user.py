@@ -2,6 +2,7 @@
 from . import app, db
 from flask import request
 from Lotus.model.user import User
+from hashlib import md5
 
 
 @app.route('/user/login', methods=['POST'])
@@ -11,13 +12,17 @@ def user_login():
 
 @app.route('/user/register', methods=['POST'])
 def user_register():
-    # todo 有插入异常怎么办？
+    #todo (参数不够)有插入异常怎么办？
     #todo 忘记密码..
+
     u = User()
     u.username = request.form.get('username', None)
     u.description = request.form.get('description', None)
     u.type = request.form.get('type', User.CONST_TYPE_USER)
     u.email = request.form.get('email', None)
+    m = md5()
+    m.update(request.form.get('psw', User.CONST_DEFAULT_PASSWORD))#默认密码
+    u.psw = m.hexdigest()
     db.session.add(u)
     db.session.commit()
     return "register is ok"
