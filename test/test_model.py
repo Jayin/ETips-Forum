@@ -14,7 +14,7 @@ class TestModelUser(unittest.TestCase):
         pass
 
     def test_add(self):
-        m = md5();
+        m = md5()
         u1 = User()
         u1.userid = 1
         u1.username = 'jayin'
