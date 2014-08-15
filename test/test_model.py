@@ -14,34 +14,30 @@ class TestModelUser(unittest.TestCase):
         pass
 
     def test_add(self):
+        """
+        register
+        :return:
+        """
         m = md5()
-        u1 = User()
-        u1.userid = 1
-        u1.username = 'jayin'
-        u1.email = 'tonjayin@gmail.com'
-        u1.type = 'user'
-        u1.description = "cool man"
-        m.update('273942569')
-        u1.psw = m.hexdigest()
+        u1 = User(username='jayin', email='tonjayin@gmail.com', description='cool man', psw='273942569')
 
-        u2 = User()
-        u2.userid = 2
-        u2.username = 'Mars'
-        u2.email = 'Mars@gmail.com'
-        u2.type = 'user'
-        # u2.description ="cool man"
-        m.update('273942569')
-        u2.psw = m.hexdigest()
+        u2 = User(username='Mars', email='Mars@gmail.com', psw='273942569')
+
+        admin1 = User(username='admin1', email='admin1@gmail.com', psw='273942569', type=User.CONST_TYPE_ADMIN)
+
+        admin2 = User(username='admin2', email='admin2@gmail.com', description='cool man', psw='273942569',
+                      type=User.CONST_TYPE_ADMIN)
 
         db.session.add(u1)
         db.session.add(u2)
+        db.session.add(admin1)
+        db.session.add(admin2)
         db.session.commit()
 
         print '---result---'
         users = User.query.all()
         print users
         print '------------'
-
 
     def test_insert(self):
         print 'insert'
